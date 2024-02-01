@@ -25,6 +25,25 @@ const routes = [
         component:()=> import('../components/framework/Error404.vue')
     },
     
+    {
+        path: '/inicio',
+        component: ()=> import ('../components/framework/Formulario.vue'),
+
+        //Los componentes que se renderizan en router-vue
+        children: [
+            {
+                path: '/main',
+                name: 'main',
+                component: ()=> import ('../components/framework/Formulario.vue'),
+            },
+            {
+                path: '/tercero',
+                name: 'tercero',
+                component: () => import('')
+            },
+            
+        ]
+    }
 
 
 ]
